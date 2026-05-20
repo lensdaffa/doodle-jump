@@ -1,0 +1,130 @@
+/* ─── RESET ─────────────────────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ─── BODY ──────────────────────────────────────────────────────────────── */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #1a1a2e;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ─── CANVAS fullscreen ──────────────────────────────────────────────────── */
+#gameCanvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ─── UI (SCORE BAR) — overlay di atas canvas ───────────────────────────── */
+#ui {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#scoreDisplay {
+  font-size: 20px;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.35);
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+  padding: 8px 22px;
+  color: #fff;
+  letter-spacing: 1px;
+  box-shadow: 0 0 14px rgba(76, 175, 80, 0.5);
+  backdrop-filter: blur(6px);
+}
+
+#bestDisplay {
+  font-size: 14px;
+  color: #eee;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1.5px solid #888;
+  border-radius: 12px;
+  padding: 7px 16px;
+  backdrop-filter: blur(6px);
+}
+
+/* ─── INSTRUKSI — bawah layar ────────────────────────────────────────────── */
+#instructions {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  z-index: 10;
+  pointer-events: none;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  white-space: nowrap;
+}
+
+/* ─── WRAPPER ────────────────────────────────────────────────────────────── */
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+}
+
+/* ─── GAME OVER OVERLAY ──────────────────────────────────────────────────── */
+#gameOver {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  min-width: 220px;
+  z-index: 20;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+#gameOver h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#finalScore {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 18px;
+}
+
+#gameOver button {
+  padding: 10px 28px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#gameOver button:hover {
+  background: #388E3C;
+}
+
+/* ─── CONTAINER (tidak dipakai untuk layout, hanya pembungkus) ───────────── */
+#gameContainer {
+  display: contents;
+}
